@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .wrapper {
+            width: 70%; /* Limit page to 70% of the width */
+            margin: auto;
+            height: 95%; /* Slightly smaller than full height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 5vh; /* Adjusted for smaller height */
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-grow: 1;
+            padding: 10px 0;
+        }
+
+        .section {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Reduced gap */
+        }
+
+        .section-title {
+            font-size: 22px; /* Slightly smaller */
+            font-weight: bold;
+            margin: 0;
+            text-align: left;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fdfdfd;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+
+            .box:hover {
+                transform: scale(1.02);
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+            }
+
+        .sub-section-title {
+            font-size: 18px; /* Slightly smaller */
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .left-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            height: 100%; /* Fill entire box space */
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: space-evenly; /* Distribute links evenly */
+            flex-grow: 1; /* Stretch to fill height */
+        }
+
+        .grade-link {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+        }
+
+            .grade-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Company Name</div>
+        <div class="content">
+            <!-- Left Section -->
+            <div class="section">
+                <div class="section-title">Elementary/Middle School</div>
+                <div class="box">
+                    <div class="sub-section-title">Math</div>
+                    <div class="left-section">
+                        <div class="left-column">
+                            <a href="detail.html?subject=Math&grade=First" class="grade-link">First-grade math</a>
+                            <a href="detail.html?subject=Math&grade=Second" class="grade-link">Second-grade math</a>
+                            <a href="detail.html?subject=Math&grade=Third" class="grade-link">Third-grade math</a>
+                            <a href="detail.html?subject=Math&grade=Fourth" class="grade-link">Fourth-grade math</a>
+                            <a href="detail.html?subject=Math&grade=Fifth" class="grade-link">Fifth-grade math</a>
+                        </div>
+                        <div class="left-column">
+                            <a href="detail.html?subject=Math&grade=Sixth" class="grade-link">Sixth-grade math</a>
+                            <a href="detail.html?subject=Math&grade=Seventh" class="grade-link">Seventh-grade math</a>
+                            <a href="detail.html?subject=Math&grade=Eighth" class="grade-link">Eighth-grade math</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="sub-section-title">English</div>
+                    <div class="left-section">
+                        <div class="left-column">
+                            <a href="detail.html?subject=English&grade=First" class="grade-link">First-grade English</a>
+                            <a href="detail.html?subject=English&grade=Second" class="grade-link">Second-grade English</a>
+                            <a href="detail.html?subject=English&grade=Third" class="grade-link">Third-grade English</a>
+                            <a href="detail.html?subject=English&grade=Fourth" class="grade-link">Fourth-grade English</a>
+                            <a href="detail.html?subject=English&grade=Fifth" class="grade-link">Fifth-grade English</a>
+                        </div>
+                        <div class="left-column">
+                            <a href="detail.html?subject=English&grade=Sixth" class="grade-link">Sixth-grade English</a>
+                            <a href="detail.html?subject=English&grade=Seventh" class="grade-link">Seventh-grade English</a>
+                            <a href="detail.html?subject=English&grade=Eighth" class="grade-link">Eighth-grade English</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="sub-section-title">Science</div>
+                    <div class="left-section">
+                        <div class="left-column">
+                            <a href="detail.html?subject=Science&grade=First" class="grade-link">First-grade science</a>
+                            <a href="detail.html?subject=Science&grade=Second" class="grade-link">Second-grade science</a>
+                            <a href="detail.html?subject=Science&grade=Third" class="grade-link">Third-grade science</a>
+                            <a href="detail.html?subject=Science&grade=Fourth" class="grade-link">Fourth-grade science</a>
+                            <a href="detail.html?subject=Science&grade=Fifth" class="grade-link">Fifth-grade science</a>
+                        </div>
+                        <div class="left-column">
+                            <a href="detail.html?subject=Science&grade=Sixth" class="grade-link">Sixth-grade science</a>
+                            <a href="detail.html?subject=Science&grade=Seventh" class="grade-link">Seventh-grade science</a>
+                            <a href="detail.html?subject=Science&grade=Eighth" class="grade-link">Eighth-grade science</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Section -->
+            <div class="section">
+                <div class="section-title">High School</div>
+                <div class="box">
+                    <p class="box-title">Title 1</p>
+                </div>
+                <div class="box">
+                    <p class="box-title">Title 2</p>
+                </div>
+                <div class="box">
+                    <p class="box-title">Title 3</p>
+                </div>
+                <div class="box">
+                    <p class="box-title">Title 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

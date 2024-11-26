@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .link-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .link-list li {
+                margin: 10px 0;
+            }
+
+        .url-link {
+            font-size: 18px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+            .url-link:hover {
+                text-decoration: underline;
+            }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+            .back-link:hover {
+                background-color: #f0f0f0;
+                border-color: #bbb;
+            }
+    </style>
+    <script>
+        // Function to extract query string parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                subject: params.get("subject"),
+                grade: params.get("grade"),
+            };
+        }
+
+        // Function to dynamically update content based on parameters
+        function updateContent() {
+            const { subject, grade } = getQueryParams();
+            const titleElement = document.getElementById("title");
+            const contentElement = document.getElementById("content");
+            const linkListElement = document.getElementById("link-list");
+
+            // Define links based on subject and grade
+            const links = {
+                Math: {
+                    First: [
+                        { name: "Google", url: "https://www.google.com" },
+                        { name: "Yahoo", url: "https://www.yahoo.com" },
+                    ],
+                    Second: [
+                        { name: "Venminder", url: "https://www.venminder.com" },
+                        { name: "MSN", url: "https://www.msn.com" },
+                    ],
+                },
+                English: {
+                    First: [
+                        { name: "Google", url: "https://www.google.com" },
+                        { name: "Yahoo", url: "https://www.yahoo.com" },
+                    ],
+                    Second: [
+                        { name: "Venminder", url: "https://www.venminder.com" },
+                        { name: "MSN", url: "https://www.msn.com" },
+                    ],
+                },
+                Science: {
+                    First: [
+                        { name: "Google", url: "https://www.google.com" },
+                        { name: "Yahoo", url: "https://www.yahoo.com" },
+                    ],
+                    Second: [
+                        { name: "Venminder", url: "https://www.venminder.com" },
+                        { name: "MSN", url: "https://www.msn.com" },
+                    ],
+                },
+            };
+
+            // Update the title and content dynamically
+            if (subject && grade && links[subject] && links[subject][grade]) {
+                titleElement.textContent = `${grade} ${subject}`;
+                contentElement.textContent = `Here are useful links for ${grade} ${subject}:`;
+
+                // Populate links dynamically
+                linkListElement.innerHTML = "";
+                links[subject][grade].forEach(link => {
+                    const listItem = document.createElement("li");
+                    const anchor = document.createElement("a");
+                    anchor.href = link.url;
+                    anchor.textContent = link.name;
+                    anchor.className = "url-link";
+                    listItem.appendChild(anchor);
+                    linkListElement.appendChild(listItem);
+                });
+            } else {
+                titleElement.textContent = "No Details Available";
+                contentElement.textContent = "Please use the correct link to view details.";
+                linkListElement.innerHTML = ""; // Clear the list if no valid parameters
+            }
+        }
+
+        // Run the updateContent function on page load
+        window.onload = updateContent;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="title" id="title">Loading...</div>
+        <div class="content" id="content">Please wait while we load the details...</div>
+        <ul id="link-list" class="link-list"></ul>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>
