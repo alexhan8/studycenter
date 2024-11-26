@@ -1,0 +1,32 @@
+{
+  "Math": {
+    "First": [
+      {
+        "name": "Google",
+        "url": "https://www.google.com",
+        "description": "Search engine for finding information."
+      },
+      {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com",
+        "description": "Another popular search engine and web portal."
+      }
+    ]
+  },
+  "English": {
+    "First": [
+      {
+        "name": "NContract",
+        "url": "https://www.NContract.com",
+        "description": "NContract risk management platform."
+      }
+    ],
+    "Second": [
+      {
+        "name": "Venminder",
+        "url": "https://www.venminder.com",
+        "description": "Vendor risk management platform."
+      }
+    ]
+  }
+}
